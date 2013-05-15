@@ -8,7 +8,7 @@ public class SubmitStatementAction {
     private String verb;
     private String activity;
 
-    private static final String ACTIVITY_PREFIX = "http://boozallen.com/tcapi/activities/";
+    private static final String ACTIVITY_PREFIX = "http://boozallen.com/tcapi/activity/";
 
     public SubmitStatementAction(String actor, String verb, String activity) {
         this.actor = actor;
@@ -36,11 +36,26 @@ public class SubmitStatementAction {
         Agent agent = new Agent();
         //agent.setMbox("mailto:tincanjava-test-tincan@tincanapi.com");
         agent.setMbox("mailto:" + this.actor);
-        //Verb verb = new Verb("http://adlnet.gov/expapi/verbs/attempted");
-        Verb verb = new Verb("http://boozallen.com/tcapi/verbs/" + this.verb);
+        Verb verb = new Verb(this.verb);
 
         //Activity activity = new Activity("http://tincanapi.com/TinCanJava/Test/RemoteLRSTest_mockActivity/" + suffix);
-        Activity activity = new Activity(ACTIVITY_PREFIX + this.activity);
+
+        Activity activity;
+        if (this.activity.toLowerCase().startsWith("http")) {
+            activity = new Activity(this.activity);
+            ActivityDefinition activityDefinition = new ActivityDefinition();
+            LanguageMap map = new LanguageMap();
+            map.put("en-US", "my Description");
+            activityDefinition.setDescription(map);
+            activity.setDefinition(activityDefinition);
+        } else {
+            activity = new Activity(ACTIVITY_PREFIX + this.activity.replaceAll(" ", "-"));
+            ActivityDefinition activityDefinition = new ActivityDefinition();
+            LanguageMap map = new LanguageMap();
+            map.put("en-US", this.activity);
+            activityDefinition.setDescription(map);
+            activity.setDefinition(activityDefinition);
+        }
 
         //st.stamp(); // triggers a PUT
         st.setActor(agent);
