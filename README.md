@@ -12,7 +12,7 @@ new activity creation can be avoided when the activity has been seen before.
 
 Features
 --------
-* Configurable
+* Configurable (title, new verb prefix, verb list url, lrs info, etc)
 * Verbs and Activities are discoverable via "type ahead" functionality
 * Responsive UI - adjust to phone, tablet, desktop as appropriate.
 * Utilizes the Java TinCan client lib
