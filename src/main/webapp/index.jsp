@@ -175,7 +175,7 @@
 
     function validateActivity() {
         if ($.inArray($('#activity-typeahead').val(), activityDescriptions) == -1) {
-            alert('You are about ready to define a new verb');
+            alert("You are about ready to define a new activity, are you sure a similar activity doesn't aready exist?");
             $('#activityId').val($('#activity-typeahead').val());
             return true;
         } else {
