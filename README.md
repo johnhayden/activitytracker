@@ -25,12 +25,12 @@ This is a simple web application packaged as a .war.  There is no dependency on 
 access is necessary to maintain the list of activities created on-the-fly.
 
 1. Clone repository*
-2. mvn package
+2. "mvn package"
 3. Create a directory to hold the non-war application data files. (ex: /usr/local/activitytracker).
 4. Copy the activitytracker.properties.template to this new directory as activitytracker.properties.
 5. Modify the properties file as appropriate.  This includes specifying the Tin Can API endpoint and credentials.
 6. Deploy the activitytracker.war to an web container of your choice (ex: Jetty)
-7. Launch the web container with the parameter -Dactivitytracker.properties=<file_path_to_your_properties>
+7. Launch the web container with the parameter -Dactivitytracker.properties=file_path_to_your_properties
 
 *NOTE: You will need to clone https://github.com/RusticiSoftware/TinCanJava.git and issue "mvn install" so this
 dependency is avaiable in your local repository.
