@@ -5,6 +5,12 @@
 <web-app>
     <display-name>Activity Tracker</display-name>
 
+    <listener>
+        <listener-class>
+            com.rusticisoftware.activitytracker.AppConfig
+        </listener-class>
+    </listener>
+
     <servlet>
         <servlet-name>ApplicationController</servlet-name>
         <servlet-class>com.rusticisoftware.activitytracker.AppController

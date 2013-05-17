@@ -1,0 +1,498 @@
+[ {
+    "uri" : "http://adlnet.gov/expapi/verbs/answered",
+    "type" : "VERB",
+    "metadata" : {
+        "id" : 21,
+        "created" : "2013-04-30T16:39:52.000+0000",
+        "updated" : "2013-04-30T16:39:52.000+0000",
+        "editNotes" : null,
+        "metadata" : {
+            "name" : {
+                "en-us" : "answered"
+            },
+            "description" : {
+                "en-us" : "Indicates the actor responded to a Question"
+            }
+        }
+    }
+}, {
+    "id" : 37,
+    "created" : "2013-05-02T18:19:27.000+0000",
+    "updated" : "2013-05-02T18:19:27.000+0000",
+    "uri" : "http://adlnet.gov/expapi/verbs/asked",
+    "type" : "VERB",
+    "metadata" : {
+        "id" : 37,
+        "created" : "2013-05-02T18:19:27.000+0000",
+        "updated" : "2013-05-02T18:19:27.000+0000",
+        "editNotes" : null,
+        "metadata" : {
+            "name" : {
+                "en-US" : "asked"
+            },
+            "description" : {
+                "en-US" : "Used to make an inquiry of an actor with the expectation of a response. May be used to ask a question, typically the system would be the primary actor, with the learner being the recipient of the question.    The question could also be asked into a vacuum, with the eventual response (statement with verb responded) providing the actual context of the recipient.  For example \"System asked Math quiz question 1 with result \"What is 2+2\"\" followed by \"Andy responded to quiz question 1 with result \"response=\"4\"\" would alleviate the need to identify the second actor."
+            }
+        }
+    }
+}, {
+    "id" : 17,
+    "created" : "2013-04-30T16:39:52.000+0000",
+    "updated" : "2013-04-30T16:39:52.000+0000",
+    "uri" : "http://adlnet.gov/expapi/verbs/attempted",
+    "type" : "VERB",
+    "metadata" : {
+        "id" : 17,
+        "created" : "2013-04-30T16:39:52.000+0000",
+        "updated" : "2013-04-30T16:39:52.000+0000",
+        "editNotes" : null,
+        "metadata" : {
+            "name" : {
+                "en-us" : "attempted"
+            },
+            "description" : {
+                "en-us" : "Used at the initiation of many \"experienced\" activities to mark the entry. Attempts without further verbs could be incomplete in some cases."
+            }
+        }
+    }
+}, {
+    "id" : 16,
+    "created" : "2013-04-30T16:39:52.000+0000",
+    "updated" : "2013-04-30T16:39:52.000+0000",
+    "uri" : "http://adlnet.gov/expapi/verbs/attended",
+    "type" : "VERB",
+    "metadata" : {
+        "id" : 16,
+        "created" : "2013-04-30T16:39:52.000+0000",
+        "updated" : "2013-04-30T16:39:52.000+0000",
+        "editNotes" : null,
+        "metadata" : {
+            "name" : {
+                "en-us" : "attended"
+            },
+            "description" : {
+                "en-us" : "The process of associating the location of an actor to some place (physical or virtual)."
+            }
+        }
+    }
+}, {
+    "id" : 28,
+    "created" : "2013-05-02T18:19:27.000+0000",
+    "updated" : "2013-05-02T18:19:27.000+0000",
+    "uri" : "http://adlnet.gov/expapi/verbs/commented",
+    "type" : "VERB",
+    "metadata" : {
+        "id" : 28,
+        "created" : "2013-05-02T18:19:27.000+0000",
+        "updated" : "2013-05-02T18:19:27.000+0000",
+        "editNotes" : null,
+        "metadata" : {
+            "name" : {
+                "en-US" : "commented"
+            },
+            "description" : {
+                "en-US" : "Offered an opinion or written experience of the activity. Can be used with the learner as the actor or a system as an actor.  Comments can be sent from either party with the idea that the other will read and react to the content."
+            }
+        }
+    }
+}, {
+    "id" : 18,
+    "created" : "2013-04-30T16:39:52.000+0000",
+    "updated" : "2013-04-30T16:39:52.000+0000",
+    "uri" : "http://adlnet.gov/expapi/verbs/completed",
+    "type" : "VERB",
+    "metadata" : {
+        "id" : 18,
+        "created" : "2013-04-30T16:39:52.000+0000",
+        "updated" : "2013-04-30T16:39:52.000+0000",
+        "editNotes" : null,
+        "metadata" : {
+            "name" : {
+                "en-us" : "completed"
+            },
+            "description" : {
+                "en-us" : "To experience the activity in its entirety. Used to affirm the completion of content.  This can be simply experiencing all the content, be tied to objectives or interactions, or determined in any other way.  Any content that has been initialized, but not yet completed, should be considered incomplete.  There is no verb to 'incomplete' an activity, one would void the statement which completes the activity."
+            }
+        }
+    }
+}, {
+    "id" : 29,
+    "created" : "2013-05-02T18:19:27.000+0000",
+    "updated" : "2013-05-02T18:19:27.000+0000",
+    "uri" : "http://adlnet.gov/expapi/verbs/exited",
+    "type" : "VERB",
+    "metadata" : {
+        "id" : 29,
+        "created" : "2013-05-02T18:19:27.000+0000",
+        "updated" : "2013-05-02T18:19:27.000+0000",
+        "editNotes" : null,
+        "metadata" : {
+            "name" : {
+                "en-US" : "exited"
+            },
+            "description" : {
+                "en-US" : "Used to leave an activity attempt with no intention of returning with the learner progress intact.  The expectation is learner progress will be cleared.  Should appear immediately before a statement with terminated.  A statement with EITHER exited OR suspended should be used before one with terminated.  Lack of the two implies the same as exited."
+            }
+        }
+    }
+}, {
+    "id" : 15,
+    "created" : "2013-04-30T16:39:52.000+0000",
+    "updated" : "2013-04-30T16:39:52.000+0000",
+    "uri" : "http://adlnet.gov/expapi/verbs/experienced",
+    "type" : "VERB",
+    "metadata" : {
+        "id" : 15,
+        "created" : "2013-04-30T16:39:52.000+0000",
+        "updated" : "2013-04-30T16:39:52.000+0000",
+        "editNotes" : null,
+        "metadata" : {
+            "name" : {
+                "en-us" : "experienced"
+            },
+            "description" : {
+                "en-us" : "A catch-all verb to say that someone viewed, listened to, read, etc. some form of content. There is no assumption of completion or success."
+            }
+        }
+    }
+}, {
+    "id" : 20,
+    "created" : "2013-04-30T16:39:52.000+0000",
+    "updated" : "2013-04-30T16:39:52.000+0000",
+    "uri" : "http://adlnet.gov/expapi/verbs/failed",
+    "type" : "VERB",
+    "metadata" : {
+        "id" : 20,
+        "created" : "2013-04-30T16:39:52.000+0000",
+        "updated" : "2013-04-30T16:39:52.000+0000",
+        "editNotes" : null,
+        "metadata" : {
+            "name" : {
+                "en-us" : "failed"
+            },
+            "description" : {
+                "en-us" : "Learner did not perform the activity to a level of pre-determined satisfaction. Used to affirm the lack of success a learner experienced within the learning content in relation to a threshold.  If the user performed below the minimum to the level of this threshold, the content is 'failed'.  The opposite of 'passed'."
+            }
+        }
+    }
+}, {
+    "id" : 23,
+    "created" : "2013-04-30T16:39:52.000+0000",
+    "updated" : "2013-04-30T16:39:52.000+0000",
+    "uri" : "http://adlnet.gov/expapi/verbs/imported",
+    "type" : "VERB",
+    "metadata" : {
+        "id" : 23,
+        "created" : "2013-04-30T16:39:52.000+0000",
+        "updated" : "2013-04-30T16:39:52.000+0000",
+        "editNotes" : null,
+        "metadata" : {
+            "name" : {
+                "en-us" : "imported"
+            },
+            "description" : {
+                "en-us" : "The act of moving an object into another location or system."
+            }
+        }
+    }
+}, {
+    "id" : 26,
+    "created" : "2013-05-02T18:19:27.000+0000",
+    "updated" : "2013-05-02T18:19:27.000+0000",
+    "uri" : "http://adlnet.gov/expapi/verbs/initialized",
+    "type" : "VERB",
+    "metadata" : {
+        "id" : 26,
+        "created" : "2013-05-02T18:19:27.000+0000",
+        "updated" : "2013-05-02T18:19:27.000+0000",
+        "editNotes" : null,
+        "metadata" : {
+            "name" : {
+                "en-US" : "initialized"
+            },
+            "description" : {
+                "en-US" : "Begins the formal tracking of learning content, any statements time stamped before a statement with an initialized verb are not formally tracked."
+            }
+        }
+    }
+}, {
+    "id" : 22,
+    "created" : "2013-04-30T16:39:52.000+0000",
+    "updated" : "2013-04-30T16:39:52.000+0000",
+    "uri" : "http://adlnet.gov/expapi/verbs/interacted",
+    "type" : "VERB",
+    "metadata" : {
+        "id" : 22,
+        "created" : "2013-04-30T16:39:52.000+0000",
+        "updated" : "2013-04-30T16:39:52.000+0000",
+        "editNotes" : null,
+        "metadata" : {
+            "name" : {
+                "en-us" : "interacted"
+            },
+            "description" : {
+                "en-us" : "A catch-all verb used to assert an actor's manipulation of an object, physical or digital, in some context."
+            }
+        }
+    }
+}, {
+    "id" : 38,
+    "created" : "2013-05-02T18:19:27.000+0000",
+    "updated" : "2013-05-02T18:19:27.000+0000",
+    "uri" : "http://adlnet.gov/expapi/verbs/launched",
+    "type" : "VERB",
+    "metadata" : {
+        "id" : 38,
+        "created" : "2013-05-02T18:19:27.000+0000",
+        "updated" : "2013-05-02T18:19:27.000+0000",
+        "editNotes" : null,
+        "metadata" : {
+            "name" : {
+                "en-US" : "launched"
+            },
+            "description" : {
+                "en-US" : "Starts the process of launching the next piece of learning content.  There is no expectation if this is done by user or system and no expectation that the learning content is a \"SCO\".  It is highly recommended that the display is used to mirror the behavior.  If an activity is launched from another, then launched from may be better.  If the activity is launched and then the statement is generated, launched or launched into may be more appropriate."
+            }
+        }
+    }
+}, {
+    "id" : 39,
+    "created" : "2013-05-02T18:19:27.000+0000",
+    "updated" : "2013-05-02T18:19:27.000+0000",
+    "uri" : "http://adlnet.gov/expapi/verbs/mastered",
+    "type" : "VERB",
+    "metadata" : {
+        "id" : 39,
+        "created" : "2013-05-02T18:19:27.000+0000",
+        "updated" : "2013-05-02T18:19:27.000+0000",
+        "editNotes" : null,
+        "metadata" : {
+            "name" : {
+                "en-US" : "mastered"
+            },
+            "description" : {
+                "en-US" : "Used to describe a level of competence achieved in the activity.  The level should be within the range of a defined scale.  This is not to be confused with \"progressed\", which shows how much content was experienced, whereas mastery has to do with level of expertise."
+            }
+        }
+    }
+}, {
+    "id" : 19,
+    "created" : "2013-04-30T16:39:52.000+0000",
+    "updated" : "2013-04-30T16:39:52.000+0000",
+    "uri" : "http://adlnet.gov/expapi/verbs/passed",
+    "type" : "VERB",
+    "metadata" : {
+        "id" : 19,
+        "created" : "2013-04-30T16:39:52.000+0000",
+        "updated" : "2013-04-30T16:39:52.000+0000",
+        "editNotes" : null,
+        "metadata" : {
+            "name" : {
+                "en-us" : "passed"
+            },
+            "description" : {
+                "en-us" : "Used to affirm the success a learner experienced within the learning content in relation to a threshold.  If the user performed at a minimum to the level of this threshold, the content is 'passed'.  The opposite of 'failed'."
+            }
+        }
+    }
+}, {
+    "id" : 30,
+    "created" : "2013-05-02T18:19:27.000+0000",
+    "updated" : "2013-05-02T18:19:27.000+0000",
+    "uri" : "http://adlnet.gov/expapi/verbs/preferred",
+    "type" : "VERB",
+    "metadata" : {
+        "id" : 30,
+        "created" : "2013-05-02T18:19:27.000+0000",
+        "updated" : "2013-05-02T18:19:27.000+0000",
+        "editNotes" : null,
+        "metadata" : {
+            "name" : {
+                "en-US" : "preferred"
+            },
+            "description" : {
+                "en-US" : "The userÃ¢â‚¬â„¢s preference, typically presented to the content or system in the form of a response to a question.  A response to a personal question to the learner, typically resulting in a change in content or system behavior. For example, the system could ask a question if the learner preferred a voice over text option.  The resulting statement could be Andy preferred on Civil War History with result response = 'no voiceover'.  This distinction is made between statements with responded as the content/system is expected to change as a results of the learner response."
+            }
+        }
+    }
+}, {
+    "id" : 31,
+    "created" : "2013-05-02T18:19:27.000+0000",
+    "updated" : "2013-05-02T18:19:27.000+0000",
+    "uri" : "http://adlnet.gov/expapi/verbs/progressed",
+    "type" : "VERB",
+    "metadata" : {
+        "id" : 31,
+        "created" : "2013-05-02T18:19:27.000+0000",
+        "updated" : "2013-05-02T18:19:27.000+0000",
+        "editNotes" : null,
+        "metadata" : {
+            "name" : {
+                "en-US" : "progressed"
+            },
+            "description" : {
+                "en-US" : "A value, typically within a scale of progression, to how much of an activity has been accomplished.  This is not to be confused with 'mastered', as the level of success or competency a user gained is not guaranteed by progress."
+            }
+        }
+    }
+}, {
+    "id" : 32,
+    "created" : "2013-05-02T18:19:27.000+0000",
+    "updated" : "2013-05-02T18:19:27.000+0000",
+    "uri" : "http://adlnet.gov/expapi/verbs/registered",
+    "type" : "VERB",
+    "metadata" : {
+        "id" : 32,
+        "created" : "2013-05-02T18:19:27.000+0000",
+        "updated" : "2013-05-02T18:19:27.000+0000",
+        "editNotes" : null,
+        "metadata" : {
+            "name" : {
+                "en-US" : "registered"
+            },
+            "description" : {
+                "en-US" : "Indicates the actor registered for a learning activity"
+            }
+        }
+    }
+}, {
+    "id" : 36,
+    "created" : "2013-05-02T18:19:27.000+0000",
+    "updated" : "2013-05-02T18:19:27.000+0000",
+    "uri" : "http://adlnet.gov/expapi/verbs/responded",
+    "type" : "VERB",
+    "metadata" : {
+        "id" : 36,
+        "created" : "2013-05-02T18:19:27.000+0000",
+        "updated" : "2013-05-02T18:19:27.000+0000",
+        "editNotes" : null,
+        "metadata" : {
+            "name" : {
+                "en-US" : "responded"
+            },
+            "description" : {
+                "en-US" : "Used to respond to a question.  It could be either the actual answer to a question asked of the actor OR the correctness of an answer to a question asked of the actor. Must follow a statement with asked or another statement with a responded (the top statement with responded) must follow the \"asking\" statement.  The response to the question can be the actual text (usually) response or the correctness of that response.  For example, Andy responded to quiz question 1 with result 'response=4' and Andy responded to quiz question 1 with result success=true'.  Typically both types of responded statements would follow a single question/interacton."
+            }
+        }
+    }
+}, {
+    "id" : 33,
+    "created" : "2013-05-02T18:19:27.000+0000",
+    "updated" : "2013-05-02T18:19:27.000+0000",
+    "uri" : "http://adlnet.gov/expapi/verbs/resumed",
+    "type" : "VERB",
+    "metadata" : {
+        "id" : 33,
+        "created" : "2013-05-02T18:19:27.000+0000",
+        "updated" : "2013-05-02T18:19:27.000+0000",
+        "editNotes" : null,
+        "metadata" : {
+            "name" : {
+                "en-US" : "resumed"
+            },
+            "description" : {
+                "en-US" : "Used to resume suspended attempts on an activity.  Should immediately follow a statement with initialized  if the attempt is indeed to be resumed. The absence of a resumed statement implies a fresh attempt on the activity.  Can only be used on an activity that used a suspended statement."
+            }
+        }
+    }
+}, {
+    "id" : 34,
+    "created" : "2013-05-02T18:19:27.000+0000",
+    "updated" : "2013-05-02T18:19:27.000+0000",
+    "uri" : "http://adlnet.gov/expapi/verbs/scored",
+    "type" : "VERB",
+    "metadata" : {
+        "id" : 34,
+        "created" : "2013-05-02T18:19:27.000+0000",
+        "updated" : "2013-05-02T18:19:27.000+0000",
+        "editNotes" : null,
+        "metadata" : {
+            "name" : {
+                "en-US" : "scored"
+            },
+            "description" : {
+                "en-US" : "A measure related to the learnerÃ¢â‚¬â„¢s performance, typically between either 0 and 1 or 0 and 100, which corresponds to a learner's performance on an activity.  It is expected the context property provides guidance to the allowed values of the result field."
+            }
+        }
+    }
+}, {
+    "id" : 24,
+    "created" : "2013-04-30T16:39:52.000+0000",
+    "updated" : "2013-04-30T16:39:52.000+0000",
+    "uri" : "http://adlnet.gov/expapi/verbs/shared",
+    "type" : "VERB",
+    "metadata" : {
+        "id" : 24,
+        "created" : "2013-04-30T16:39:52.000+0000",
+        "updated" : "2013-04-30T16:39:52.000+0000",
+        "editNotes" : null,
+        "metadata" : {
+            "name" : {
+                "en-us" : "shared"
+            },
+            "description" : {
+                "en-us" : "Generic term indicating the intent to exchange an item of interest or the explicit changing of privacy Ã¢â‚¬â€œ largely derived from context."
+            }
+        }
+    }
+}, {
+    "id" : 35,
+    "created" : "2013-05-02T18:19:27.000+0000",
+    "updated" : "2013-05-02T18:19:27.000+0000",
+    "uri" : "http://adlnet.gov/expapi/verbs/suspended",
+    "type" : "VERB",
+    "metadata" : {
+        "id" : 35,
+        "created" : "2013-05-02T18:19:27.000+0000",
+        "updated" : "2013-05-02T18:19:27.000+0000",
+        "editNotes" : null,
+        "metadata" : {
+            "name" : {
+                "en-US" : "suspended"
+            },
+            "description" : {
+                "en-US" : "Used to suspend an activity with the intention of returning to it later, but not losing progress.  Should appear immediately before a statement with terminated.  A statement with EITHER exited OR suspended should be used before one with terminated.  Lack of the two implies the same as exited.  Beginning the suspended activity will always result in a resumed activity."
+            }
+        }
+    }
+}, {
+    "id" : 27,
+    "created" : "2013-05-02T18:19:27.000+0000",
+    "updated" : "2013-05-02T18:19:27.000+0000",
+    "uri" : "http://adlnet.gov/expapi/verbs/terminated",
+    "type" : "VERB",
+    "metadata" : {
+        "id" : 27,
+        "created" : "2013-05-02T18:19:27.000+0000",
+        "updated" : "2013-05-02T18:19:27.000+0000",
+        "editNotes" : null,
+        "metadata" : {
+            "name" : {
+                "en-US" : "terminated"
+            },
+            "description" : {
+                "en-US" : "Ends the formal tracking of learning content, any statements time stamped after a statement with a terminated verb are not formally tracked."
+            }
+        }
+    }
+}, {
+    "id" : 14,
+    "created" : "2013-04-30T16:39:52.000+0000",
+    "updated" : "2013-04-30T16:39:52.000+0000",
+    "uri" : "http://adlnet.gov/expapi/verbs/voided",
+    "type" : "VERB",
+    "metadata" : {
+        "id" : 14,
+        "created" : "2013-04-30T16:39:52.000+0000",
+        "updated" : "2013-04-30T16:39:52.000+0000",
+        "editNotes" : null,
+        "metadata" : {
+            "name" : {
+                "en-us" : "voided"
+            },
+            "description" : {
+                "en-us" : "A special LRS-reserved verb. Used by the LRS to declare that an activity statement is to be voided from record."
+            }
+        }
+    }
+} ]

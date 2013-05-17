@@ -1,6 +1,12 @@
 package com.rusticisoftware.activitytracker;
 
 import com.rusticisoftware.tincan.*;
+import com.rusticisoftware.tincan.Activity;
+import org.codehaus.jackson.map.ObjectMapper;
+
+import java.io.File;
+import java.util.LinkedHashMap;
+import java.util.List;
 
 public class SubmitStatementAction {
 
@@ -8,7 +14,7 @@ public class SubmitStatementAction {
     private String verb;
     private String activity;
 
-    private static final String ACTIVITY_PREFIX = "http://boozallen.com/tcapi/activity/";
+    private static final ObjectMapper mapper = new ObjectMapper(); // can reuse, share globally
 
     public SubmitStatementAction(String actor, String verb, String activity) {
         this.actor = actor;
@@ -22,9 +28,9 @@ public class SubmitStatementAction {
 
         RemoteLRS lrs = new RemoteLRS();
 
-        lrs.setEndpoint("https://cloud.scorm.com/ScormEngineInterface/TCAPI/john/");
-        lrs.setUsername("john");
-        lrs.setPassword("32wE8eRYmMKy5Rcl171ZrR3lSIj2a4QyZXbwWZE7");
+        lrs.setEndpoint(AppConfig.lrsUrl);
+        lrs.setUsername(AppConfig.lrsId);
+        lrs.setPassword(AppConfig.lrsPassword);
 
         //lrs.setEndpoint("https://johnnyhayden.waxlrs.com/TCAPI/");
         //lrs.setUsername("FDMSzgEvCrqVPKJaJPKN");
@@ -34,27 +40,42 @@ public class SubmitStatementAction {
 
         Statement st = new Statement();
         Agent agent = new Agent();
-        //agent.setMbox("mailto:tincanjava-test-tincan@tincanapi.com");
         agent.setMbox("mailto:" + this.actor);
         Verb verb = new Verb(this.verb);
 
-        //Activity activity = new Activity("http://tincanapi.com/TinCanJava/Test/RemoteLRSTest_mockActivity/" + suffix);
-
-        Activity activity;
+        com.rusticisoftware.tincan.Activity activity;
         if (this.activity.toLowerCase().startsWith("http")) {
-            activity = new Activity(this.activity);
+            activity = new com.rusticisoftware.tincan.Activity(this.activity);
             ActivityDefinition activityDefinition = new ActivityDefinition();
             LanguageMap map = new LanguageMap();
-            map.put("en-US", "my Description");
+
+            List<LinkedHashMap> activityOptions = mapper.readValue(AppConfig.activityDataFile, List.class);
+            String description = "";
+            for(LinkedHashMap activityOption : activityOptions) {
+                if (activityOption.get("id").equals(this.activity)) {
+                    description = activityOption.get("description").toString();
+                    break;
+                }
+            }
+
+            map.put("en-US", description);
             activityDefinition.setDescription(map);
+            activityDefinition.setName(map);
             activity.setDefinition(activityDefinition);
         } else {
-            activity = new Activity(ACTIVITY_PREFIX + this.activity.replaceAll(" ", "-"));
+            activity = new com.rusticisoftware.tincan.Activity(AppConfig.newActivityIdPrefix + this.activity.replaceAll(" ", "-"));
             ActivityDefinition activityDefinition = new ActivityDefinition();
             LanguageMap map = new LanguageMap();
             map.put("en-US", this.activity);
             activityDefinition.setDescription(map);
+            activityDefinition.setName(map);
             activity.setDefinition(activityDefinition);
+
+            //Save this off as a new activity
+
+            List<ActivityOption> activityOptions = mapper.readValue(AppConfig.activityDataFile, List.class);
+            activityOptions.add(new ActivityOption(activity.getId().toString(), this.activity, this.activity));
+            mapper.writeValue(AppConfig.activityDataFile, activityOptions);
         }
 
         //st.stamp(); // triggers a PUT

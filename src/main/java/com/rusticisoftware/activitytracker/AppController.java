@@ -1,17 +1,13 @@
 package com.rusticisoftware.activitytracker;
 
-import org.codehaus.jackson.map.ObjectMapper;
+import org.apache.commons.io.FileUtils;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.io.*;
 
 public class AppController extends HttpServlet {
 
@@ -36,8 +32,10 @@ public class AppController extends HttpServlet {
 
                 SubmitStatementAction ssa = new SubmitStatementAction(actor, verb, activity);
                 ssa.process();
+                response.sendRedirect("index.jsp?email=" + java.net.URLEncoder.encode(actor, "ISO-8859-1") +"&success=true");
 
             } else if (action.equals("confirmstatement")) {
+                throw new ServletException("confirmstatement not implemented");
 
             } else if (action.equals("getverbs")) {
                 doGet(request, response);
@@ -67,29 +65,8 @@ public class AppController extends HttpServlet {
         action = action.toLowerCase();
 
         try {
-            if (action.equals("getverbs")) {
-
-                ObjectMapper mapper = new ObjectMapper();
-
-                List<DropdownOption> options = new ArrayList<DropdownOption>();
-
-                options.add(new DropdownOption("red", "http://url/red"));
-                options.add(new DropdownOption("ruby", "http://url/ruby"));
-                options.add(new DropdownOption("black", "http://url/black"));
-                options.add(new DropdownOption("blue", "http://url/blue"));
-
-                response.getWriter().write(mapper.writeValueAsString(options));
-
-//                response.getWriter().write("{\n" +
-//                        "            \"options\": [\n" +
-//                        "            \"Option 1\",\n" +
-//                        "            \"Option 2\",\n" +
-//                        "            \"Option 3\",\n" +
-//                        "            \"Option 4\",\n" +
-//                        "            \"Option 5\"\n" +
-//                        "        ]\n" +
-//                        "        }");
-
+            if (action.equals("getactivities")) {
+                response.getWriter().write(FileUtils.readFileToString(AppConfig.activityDataFile, "utf-8"));
             } else {
                 response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
                 response.getWriter().write("Action not valid (for GET at least): " + action);
@@ -102,7 +79,6 @@ public class AppController extends HttpServlet {
 
         out.close();
     }
-
 
 }
 
