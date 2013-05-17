@@ -1,10 +1,8 @@
 package com.rusticisoftware.activitytracker;
 
 import com.rusticisoftware.tincan.*;
-import com.rusticisoftware.tincan.Activity;
 import org.codehaus.jackson.map.ObjectMapper;
 
-import java.io.File;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -24,18 +22,11 @@ public class SubmitStatementAction {
 
     public void process() throws Exception {
 
-        // Create a statement and post it.
-
         RemoteLRS lrs = new RemoteLRS();
 
         lrs.setEndpoint(AppConfig.lrsUrl);
         lrs.setUsername(AppConfig.lrsId);
         lrs.setPassword(AppConfig.lrsPassword);
-
-        //lrs.setEndpoint("https://johnnyhayden.waxlrs.com/TCAPI/");
-        //lrs.setUsername("FDMSzgEvCrqVPKJaJPKN");
-        //lrs.setPassword("6PuQHKbB5DQkYjeK7Clg");
-
         lrs.setVersion(TCAPIVersion.V095);
 
         Statement st = new Statement();
@@ -70,15 +61,12 @@ public class SubmitStatementAction {
             activityDefinition.setDescription(map);
             activityDefinition.setName(map);
             activity.setDefinition(activityDefinition);
-
-            //Save this off as a new activity
-
             List<ActivityOption> activityOptions = mapper.readValue(AppConfig.activityDataFile, List.class);
             activityOptions.add(new ActivityOption(activity.getId().toString(), this.activity, this.activity));
             mapper.writeValue(AppConfig.activityDataFile, activityOptions);
         }
 
-        //st.stamp(); // triggers a PUT
+        //st.stamp();
         st.setActor(agent);
         st.setVerb(verb);
         st.setObject(activity);

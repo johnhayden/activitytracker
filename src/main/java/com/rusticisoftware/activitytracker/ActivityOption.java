@@ -1,5 +1,8 @@
 package com.rusticisoftware.activitytracker;
 
+/**
+ * Simple class to specify serializable tin can activities -- just the basic
+ */
 public class ActivityOption {
 
     private String id;

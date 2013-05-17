@@ -1,7 +1,6 @@
 package com.rusticisoftware.activitytracker;
 
 import org.apache.commons.io.FileUtils;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 
+/**
+ * Simple "controller" so that server-side requests all routed through a single servlet
+ */
 public class AppController extends HttpServlet {
 
     @Override

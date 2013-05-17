@@ -1,0 +1,20 @@
+#
+# This properties files contains the activity tracker parameters.  Please
+# modify these as appropriate then launch the web server with the system
+# environmental property of -Dactivitytracker.properties=<filename>, for ex:
+#
+# -Dactivitytracker.properties=/usr/local/activitytracker/activitytracker.properties
+# 
+application.page.title=Activity Tracker
+application.data.dir=/usr/local/activitytracker/
+
+new.activityid.prefix=http://mycompany.com/expapi/verbs/
+
+#
+#Uses Basic Auth
+#
+lrs.url=https://cloud.scorm.com/ScormEngineInterface/TCAPI/<appid>
+lrs.id=
+lrs.password=
+
+verblist.url=https://registry.tincanapi.com/api/registry/uris/verb

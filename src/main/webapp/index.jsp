@@ -32,7 +32,6 @@
 
 </div>
 
-
 <form name="statementForm" action="controller?action=submitStatement" method=POST>
 <div class="container" style="background-color: white; padding: 12px; border-radius: 10px;">
     <div class="row-fluid">
@@ -58,11 +57,9 @@
 </div>
 </form>
 
-
-
-
 <script src="assets/jquery-1.9.1.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
+
 <script>
 
     var activityDescriptions = [];
@@ -186,8 +183,7 @@
         }
     }
 
-
 </script>
-</body>
 
+</body>
 </html>

@@ -1,7 +1,5 @@
 package com.rusticisoftware.activitytracker;
 
-import org.apache.commons.io.FileUtils;
-
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import java.io.File;
@@ -10,6 +8,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/**
+ * This class basically exposes a properties file as set of static config parameters for convenience.
+ *
+ * <p>Note that the web server can be started with a system property -Dactivitytracker.properties=/mydir/my.properties
+ * These settings will override the default settings for the activity tracker.  In fact, they must be defined
+ * in order to specify credentials for the LRS.
+ */
 public class AppConfig implements ServletContextListener{
 
     static Properties properties = new Properties();
