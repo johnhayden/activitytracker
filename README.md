@@ -1,6 +1,6 @@
 Activity Tracker
 ===============
-Simple Activity Tracker for Tin Can API
+**Simple Activity Tracker for Tin Can API**
 
 The application is a simple "I did this" application.
 
