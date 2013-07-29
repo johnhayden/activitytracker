@@ -87,8 +87,10 @@
 
                         //For each object label=>name in the json, store the labels in the array, and mapping array with label => name    form.
                         $.each(jsonOptionMap, function (i, item) {
-                            activityMap[item.name] = item.id;
-                            activityDescriptions.push(item.name);
+                            if (activityMap[item.name] == null) {
+                                activityMap[item.name] = item.id;
+                                activityDescriptions.push(item.name);
+                            }
                         });
 
                         isActivityListLoaded = true;
@@ -126,11 +128,15 @@
                         //For each object label=>name in the json, store the labels in the array, and mapping array with label => name    form.
                         $.each(jsonOptionMap, function (i, item) {
                             if (item.metadata.metadata.name["en-us"]) {
-                                verbMap[item.metadata.metadata.name["en-us"]] = item.uri;
-                                verbDescriptions.push(item.metadata.metadata.name["en-us"]);
+                                if (verbDescriptions[item.metadata.metadata.name["en-us"]] == null) {
+                                    verbMap[item.metadata.metadata.name["en-us"]] = item.uri;
+                                    verbDescriptions.push(item.metadata.metadata.name["en-us"]);
+                                }
                             } else if (item.metadata.metadata.name["en-US"]) {
-                                verbMap[item.metadata.metadata.name["en-US"]] = item.uri;
-                                verbDescriptions.push(item.metadata.metadata.name["en-US"]);
+                                if (verbDescriptions[item.metadata.metadata.name["en-US"]] == null) {
+                                    verbMap[item.metadata.metadata.name["en-US"]] = item.uri;
+                                    verbDescriptions.push(item.metadata.metadata.name["en-US"]);
+                                }
                             }
                         });
 
@@ -141,7 +147,8 @@
             },
             updater: function (name) {
                 //For the Label selected ( item ) get the name mapped from the mapping array and set it to hidden element
-                $('#verb').val(verbMap[name]);
+                $('#verb').val(name + "|" + verbMap[name]);
+                //alert(name + "|" + verbMap[name]);
 
                 //Return the label selected to the typeahead element
                 return name;

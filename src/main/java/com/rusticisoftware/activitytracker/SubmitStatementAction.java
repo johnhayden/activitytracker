@@ -32,7 +32,15 @@ public class SubmitStatementAction {
         Statement st = new Statement();
         Agent agent = new Agent();
         agent.setMbox("mailto:" + this.actor);
-        Verb verb = new Verb(this.verb);
+
+
+        // verb comes through as desc|id
+        String[] verbPair = this.verb.split("\\|");
+
+        Verb verb = new Verb(verbPair[1]);
+        LanguageMap lm  = new LanguageMap();
+        lm.put("en-US", verbPair[0]);
+        verb.setDisplay(lm);
 
         com.rusticisoftware.tincan.Activity activity;
         if (this.activity.toLowerCase().startsWith("http")) {
